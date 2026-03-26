@@ -1,19 +1,21 @@
-const email = document.querySelector("#emailLogin")
-const senha = document.querySelector("#senhaLogin")
-const botao = document.querySelector("#entrar")
+const email = document.querySelector("#emailRegister")
+const senha = document.querySelector("#senhaRegister")
+const nome = document.querySelector("#nomeRegister")
+const botao = document.querySelector("#registrar")
 const msg = document.querySelector("#mensagem")
 
 async function cadastrar() {
-    const resultado = await fetch("http://localhost:4000/cadastro",{
+    const resultado = await fetch("http://localhost:3000/cadastro",{
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({
-            email: email.value.trim(),
-            senha: senha.value.trim()
+            nome: `${nome.value.trim()}`,
+            email: `${email.value.trim()}`,
+            senha: `${senha.value.trim()}`
         })
     })
-
-    msg.textContent = (await resultado.json()).message
+    const data = await resultado.json()
+    msg.textContent = data.message
 }
 
 botao.addEventListener("click",cadastrar)

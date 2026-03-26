@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Registro - LogiCash</title>
   <link rel="stylesheet" href="register.css">
 </head>
+
 <body class="bg-dark">
   <main class="centered-page">
     <div class="card auth-card">
@@ -17,13 +19,18 @@
       <form id="registerForm" class="auth-form">
         <div id="registerMessage" class="message"></div>
 
+        <label class="label">Nome</label>
+        <input type="email" id="nomeRegister" required placeholder="Seu nome ">
+
         <label class="label">E-mail</label>
         <input type="email" id="emailRegister" required placeholder="seu@email.com">
 
         <label class="label">Senha</label>
         <input type="password" id="senhaRegister" required placeholder="Escolha uma senha">
 
-        <button class="btn primary" type="submit">Registrar</button>
+        <button class="btn primary" id="registrar" type="button">Registrar</button>
+        <p style="margin-top: 10px;" id="mensagem"></p>
+
 
         <p class="small muted">Já tem conta? <a href="login.html" class="link">Entrar</a></p>
       </form>
@@ -32,4 +39,5 @@
 
   <script src="scripts.js"></script>
 </body>
+
 </html>
