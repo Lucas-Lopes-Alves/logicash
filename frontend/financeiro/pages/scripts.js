@@ -15,7 +15,13 @@ async function cadastrar() {
         })
     })
     const data = await resultado.json()
-    msg.textContent = data.message
+    
+    if (resultado.status === 409) {
+        msg.textContent = data.message
+    } else {
+        msg.textContent = data.message
+        setTimeout(()=>{window.location.href = "./login.html"},3000)
+    }
 }
 
 botao.addEventListener("click",cadastrar)
